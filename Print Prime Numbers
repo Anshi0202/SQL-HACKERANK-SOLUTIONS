@@ -1,0 +1,29 @@
+CREATE TABLE PRIME_NUM ( NUMBERS INT);
+DECLARE @NR INT;
+DECLARE @DIVISOR INT;
+DECLARE @IS_PRIME BIT;
+
+SELECT @NR=1;
+
+WHILE @NR <=1000
+        BEGIN 
+        SELECT @DIVISOR =@NR -1;
+        SELECT @IS_PRIME=1;
+        -- CONDITION PRIME
+        WHILE @DIVISOR > 1
+                BEGIN 
+                IF @NR % @DIVISOR = 0
+                    SELECT @IS_PRIME=0;
+                SELECT  @DIVISOR= @DIVISOR-1 
+                END
+        IF @IS_PRIME= 1 AND @NR<>1
+        INSERT INTO PRIME_NUM (NUMBERS) VALUES (@NR)
+                
+        
+        SELECT @NR=@NR+1;
+        END
+--SELECT * FROM PRIME_NUM ;
+
+--SELECT STRING_AGG(number,'&') FROM Prime_Numbers;
+SELECT STRING_AGG(NUMBERS, "&") FROM PRIME_NUM;
+
