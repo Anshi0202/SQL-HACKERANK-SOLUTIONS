@@ -1,0 +1,6 @@
+SQLBasic SelectWeather Observation Station 4
+Find the difference between the total number of CITY entries in the table and the number of distinct CITY entries in the table.
+The STATION table is described as follows:
+solution is 
+
+Select count(city)- count(distinct city) from station
