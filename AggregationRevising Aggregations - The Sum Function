@@ -1,0 +1,6 @@
+query question is
+Query the total population of all cities in CITY where District is California.
+
+
+solution is
+select sum(population) from city where district = 'California'
